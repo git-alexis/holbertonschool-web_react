@@ -52,7 +52,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Holberton Dashboard',
       filename: 'index.html',
-      inject: 'body',
     }),
   ],
   optimization: {
