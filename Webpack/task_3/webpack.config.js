@@ -50,8 +50,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Holberton Dashboard',
       filename: 'index.html',
+      title: 'Holberton Dashboard',
+      inject: 'body',
     }),
   ],
   optimization: {
