@@ -17,5 +17,5 @@ function updateCounter() {
   $('#count').text(`${count} clicks on the button`);
 }
 
-// Use lodash debounce to delay function calls
+// Use lodash debounce to delay function calls to avoid spam
 $button.on('click', _.debounce(updateCounter, 500));
