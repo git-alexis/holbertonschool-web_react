@@ -1,0 +1,50 @@
+.App-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid #e1003c;
+}
+
+.App-logo {
+  width: 200px;
+  height: auto;
+}
+
+.App-header h1 {
+  color: #e1003c;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.App-body {
+  margin: 2rem;
+  font-size: 1.2rem;
+}
+
+.App-body label {
+  font-size: 1.2rem;
+}
+
+.App-body input {
+  padding: 0.3rem;
+  margin: 0rem 0.9rem;
+  border: 1px solid #787878;
+  border-radius: 7px;
+}
+
+.App-body button {
+  padding: 0.3rem 1rem;
+  border: 1px solid #787878;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.App-footer {
+  border-top: 3px solid #e1003c;
+  text-align: center;
+  font-style: italic;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 1rem;
+}
