@@ -1,8 +1,8 @@
-import { getFooterCopy, getFullYear, getLatestNotification } from './utils';
+import { getCurrentYear, getFooterCopy, getLatestNotification } from './utils';
 
 describe("Utils functions", () => {
-  test("getFullYear returns the correct year", () => {
-    expect(getFullYear()).toEqual(2021);
+  test("getCurrentYear returns the correct year", () => {
+    expect(getCurrentYear()).toEqual(2025);
   });
 
   test("getFooterCopy returns the correct string when the argument is true", () => {

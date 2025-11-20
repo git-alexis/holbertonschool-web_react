@@ -9,3 +9,9 @@ export function getFooterCopy(isIndex) {
 export function getLatestNotification() {
   return "<strong>Urgent requirement</strong> - complete by EOD";
 }
+
+module.exports = {
+  getCurrentYear,
+  getFooterCopy,
+  getLatestNotification,
+};
