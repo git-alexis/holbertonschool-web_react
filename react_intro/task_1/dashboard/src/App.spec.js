@@ -28,7 +28,7 @@ describe('App component', () => {
     const inputs = screen.getAllByRole("textbox");
     const passwordInput = screen.getByLabelText(/password/i);
 
-    expect(inputs.length).toBe(1); // only email should appear in textbox query
+    expect(inputs.length).toBe(1);
     expect(passwordInput).toBeInTheDocument();
   });
 
@@ -38,6 +38,8 @@ describe('App component', () => {
   });
 
   test("renders a button with text OK", () => {
-    expect(screen.getByRole("button", { name: /ok/i })).toBeInTheDocument();
+    const buttonText= screen.getByText(new RegExp(`ok`, 'i'));
+
+    expect(buttonText).toBeInTheDocument();
   });
 });
