@@ -9,6 +9,8 @@ function Notifications() {
 
   return (
     <div className="notification-items">
+      <p>Here is the list of notifications</p>
+
       <button
         style={{
           top: 30,
@@ -23,8 +25,6 @@ function Notifications() {
       >
         <img src={closeIcon} alt="close icon" style={{ width: "1rem", height: "1rem" }} />
       </button>
-
-      <p>Here is the list of notifications</p>
 
       <ul>
         <li data-priority="default">New course available</li>
