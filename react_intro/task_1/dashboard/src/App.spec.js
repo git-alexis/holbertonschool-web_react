@@ -38,7 +38,7 @@ describe('App component', () => {
   });
 
   test("renders a button with text OK", () => {
-    const buttonText= screen.getByText(new RegExp(`ok`, 'i'));
+    const buttonText = screen.getByText(new RegExp(`ok`, 'i'));
 
     expect(buttonText).toBeInTheDocument();
   });
