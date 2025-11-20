@@ -24,16 +24,21 @@ describe('App component', () => {
   });
 
   test("renders 2 input elements for email and password", () => {
-    const inputs = screen.getAllByRole("textbox", { name: /email|password/i });
-    expect(inputs).toHaveLength(2);
+    const inputs = screen.getAllByRole('textbox');
+    const passwordInput = screen.getByLabelText(/password/i);
+    expect(inputs.length).toBe(1);
+    expect(passwordInput).toBeInTheDocument();
   });
 
   test("renders 2 label elements with Email and Password", () => {
-    const labels = screen.getAllByText(/email|password/i);
-    expect(labels).toHaveLength(2);
+    const emailLabel = screen.getByLabelText(/email/i);
+    const passwordLabel = screen.getByLabelText(/password/i);
+    expect(emailLabel).toBeInTheDocument();
+    expect(passwordLabel).toBeInTheDocument();
   });
 
   test("renders a button with text OK", () => {
-    expect(screen.getByRole("button", { name: /ok/i })).toBeInTheDocument();
+    const buttonText = screen.getByRole('button', { name: /ok/i });
+    expect(buttonText).toBeInTheDocument();
   });
 });
