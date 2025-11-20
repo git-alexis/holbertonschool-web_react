@@ -1,6 +1,18 @@
 .notification-items {
-  border: 3px dotted #e1003c;
+  border: 3px dotted red;
   padding-left: 1rem;
   margin: 1.2rem 0rem;
   font-size: 1.2rem;
+}
+
+.notification-items p {
+  margin-bottom: 10px;
+}
+
+.notification-items li[data-priority='default'] {
+  color: blue;
+}
+
+.notification-items li[data-priority='urgent'] {
+  color: red;
 }
