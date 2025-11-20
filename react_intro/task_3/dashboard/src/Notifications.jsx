@@ -11,12 +11,12 @@ function Notifications() {
     <div className="notification-items">
       <button
         style={{
-		  top: 30,
+          top: 30,
           right: 14,
-		  position: "absolute",
+          position: "absolute",
           background: "transparent",
           border: "none",
-		  cursor: "pointer"
+          cursor: "pointer"
         }}
         aria-label="Close"
         onClick={handleClick}
