@@ -2,13 +2,12 @@ import { getCurrentYear, getFooterCopy, getLatestNotification } from './utils';
 
 describe("Utils functions", () => {
   test("getCurrentYear returns the correct year", () => {
-    expect(getCurrentYear()).toEqual(2025);
+    expect(getCurrentYear()).toEqual(2021);
   });
 
   test("getFooterCopy returns the correct string when the argument is true", () => {
     expect(getFooterCopy(true)).toEqual("Holberton School");
   });
-
   test("getFooterCopy returns the correct string when the argument is false", () => {
     expect(getFooterCopy(false)).toEqual("Holberton School main dashboard");
   });
