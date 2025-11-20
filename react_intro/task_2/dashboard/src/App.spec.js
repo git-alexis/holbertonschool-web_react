@@ -14,7 +14,6 @@ describe('App component', () => {
   test('renders the correct text in app-body and app-footer', () => {
     const bodyText = screen.getByText(/login to access the full dashboard/i);
     const footerText = screen.getByText(new RegExp(`Copyright ${new Date().getFullYear()} - holberton School`, 'i'));
-
     expect(bodyText).toBeInTheDocument();
     expect(footerText).toBeInTheDocument();
   });
@@ -25,16 +24,13 @@ describe('App component', () => {
   });
 
   test("renders 2 input elements for email and password", () => {
-    const emailInput = screen.getByLabelText(/email/i);
-    const passwordInput = screen.getByLabelText(/password/i);
-
-    expect(emailInput).toBeInTheDocument();
-    expect(passwordInput).toBeInTheDocument();
+    const inputs = screen.getAllByRole("textbox", { name: /email|password/i });
+    expect(inputs).toHaveLength(2);
   });
 
   test("renders 2 label elements with Email and Password", () => {
-    expect(screen.getByText(/email/i)).toBeInTheDocument();
-    expect(screen.getByText(/password/i)).toBeInTheDocument();
+    const labels = screen.getAllByText(/email|password/i);
+    expect(labels).toHaveLength(2);
   });
 
   test("renders a button with text OK", () => {
