@@ -2,10 +2,6 @@ import { render, screen } from '@testing-library/react';
 import App from './App.jsx';
 
 describe('App component', () => {
-  beforeEach(() => {
-    render(<App />);
-  });
-
   test("renders 2 input elements for email and password", () => {
     render(<App />);
     const inputs = screen.getAllByRole('textbox');
