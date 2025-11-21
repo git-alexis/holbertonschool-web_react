@@ -26,7 +26,7 @@ describe('App component', () => {
   test("renders the footer", () => {
     render(<Footer />)
     const currentYear = new Date().getFullYear()
-    const footer = screen.getByText(/Copyright ${currentYear} - Holberton School main dashboard/i)
+    const footer = screen.getByText(`Copyright ${currentYear} - Holberton School main dashboard`)
     expect(footer).toBeInTheDocument()
   })
 });
