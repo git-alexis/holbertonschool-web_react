@@ -6,4 +6,43 @@ describe("Login component", () => {
   test("renders login", () => {
     render(<Login />)
   });
+
+  test("renders the input elements", () => {
+    render(<Login />)
+    const email = screen.getByTestId("email")
+    const password = screen.getByTestId("password")
+    expect(email).toBeInTheDocument()
+    expect(password).toBeInTheDocument()
+  })
+
+  test("renders the labels", () => {
+    render(<Login />)
+    const email = screen.getByText(/Email/i)
+    const password = screen.getByText(/Password/i)
+    expect(email).toBeInTheDocument()
+    expect(password).toBeInTheDocument()
+  })
+
+  test("renders the button", () => {
+    render(<Login />)
+    const boutonLogin = screen.getByTestId("boutonLogin")
+    expect(boutonLogin).toBeInTheDocument()
+    expect(boutonLogin.textContent).toMatch(/OK/i)
+  })
+
+  test("Focus on email input if Email label is clicked", async () => {
+    render(<Login />)
+    const event = userEvent.setup()
+    const input = screen.getByTestId("email")
+    await event.click(screen.getByText(/Email/i))
+    expect(input).toBe(document.activeElement)
+  })
+
+  test("Focus on password input if Password label is clicked", async () => {
+    render(<Login />)
+    const event = userEvent.setup()
+    const input = screen.getByTestId("password")
+    await event.click(screen.getByText(/Password/i))
+    expect(input).toBe(document.activeElement)
+  })
 })
