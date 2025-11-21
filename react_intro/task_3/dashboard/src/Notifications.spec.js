@@ -1,5 +1,8 @@
+// Mock des assets avant tout import de composant
+jest.mock('./assets/close-button.png', () => 'close-button.png');
+
 import { shallow } from 'enzyme';
-import Notifications from './Notifications.jsx';
+import Notifications from './Notifications';
 
 describe('Notifications component', () => {
   it("<App /> is rendered without crashing", () => {

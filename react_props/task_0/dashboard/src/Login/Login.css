@@ -1,0 +1,22 @@
+.App-body {
+  margin: 2rem;
+  font-size: 1.2rem;
+}
+
+.App-body label {
+  font-size: 1.2rem;
+}
+
+.App-body input {
+  padding: 0.3rem;
+  margin: 0rem 0.9rem;
+  border: 1px solid #787878;
+  border-radius: 7px;
+}
+
+.App-body button {
+  padding: 0.3rem 1rem;
+  border: 1px solid #787878;
+  border-radius: 7px;
+  cursor: pointer;
+}

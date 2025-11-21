@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import App from './App.jsx';
+import App from './App';
 
 describe('App component', () => {
   it("<App /> is rendered without crashing", () => {
