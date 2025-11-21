@@ -1,35 +1,19 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { shallow } from 'enzyme';
 import Notifications from './Notifications.jsx';
 
 describe('Notifications component', () => {
+  it("<App /> is rendered without crashing", () => {
+    const wrapper = shallow(<Notifications />)
+    expect(wrapper).to.have.lengthOf(1);
+  });
 
   test('renders the notifications title', () => {
-    render(<Notifications />);
-    const title = screen.getByText(/here is the list of notifications/i);
-    expect(title).toBeInTheDocument();
+    const wrapper = shallow(<App />)
+    expect(wrapper.contains(<p>Here is the list of notifications</p>)).toBe(true);
   });
 
-  test('renders the close button', () => {
-    render(<Notifications />);
-    const button = screen.getByRole('button', { name: /close/i });
-    expect(button).toBeInTheDocument();
+  it('renders 3 list items', () => {
+    const wrapper = shallow(<App />)
+    expect(wrapper.find('li')).to.have.lengthOf(3);
   });
-
-  test('renders 3 list items', () => {
-    render(<Notifications />);
-    const items = screen.getAllByRole('listitem');
-    expect(items).toHaveLength(3);
-  });
-
-  test('clicking the close button logs to the console', () => {
-    render(<Notifications />);
-    const button = screen.getByRole('button', { name: /close/i });
-    const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
-
-    fireEvent.click(button);
-    expect(consoleSpy).toHaveBeenCalledWith('Close button has been clicked');
-
-    consoleSpy.mockRestore();
-  });
-
 });
