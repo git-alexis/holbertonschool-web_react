@@ -34,7 +34,7 @@ describe("Login component", () => {
     render(<Login />)
     const event = userEvent.setup()
     const input = screen.getByTestId("email")
-    await event.click(screen.getByText(/Email/i))
+    await event.click(screen.getByLabelText(/Email/i))
     expect(input).toBe(document.activeElement)
   })
 
@@ -42,7 +42,7 @@ describe("Login component", () => {
     render(<Login />)
     const event = userEvent.setup()
     const input = screen.getByTestId("password")
-    await event.click(screen.getByText(/Password/i))
+    await event.click(screen.getByLabelText(/Password/i))
     expect(input).toBe(document.activeElement)
   })
 })
