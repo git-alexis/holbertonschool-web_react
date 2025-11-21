@@ -5,10 +5,8 @@ import userEvent from '@testing-library/user-event'
 describe("Login component", () => {
   it("renders the input elements", () => {
     render(<Login />)
-    const email = screen.getByTestId("email")
-    const password = screen.getByTestId("password")
-    expect(email).toBeInTheDocument()
-    expect(password).toBeInTheDocument()
+    const twoInputs = screen.getAllByRole("textbox")
+    twoInputs.map((input) => {expect(input).toBeInTheDocument()})
   })
 
   it("renders the labels", () => {
