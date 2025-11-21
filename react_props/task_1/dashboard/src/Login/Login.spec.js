@@ -13,8 +13,8 @@ describe("Login component", () => {
 
   it("renders the labels", () => {
     render(<Login />)
-    const email = screen.getByText("Email")
-    const password = screen.getByText("Password")
+    const email = screen.getByLabelText("Email")
+    const password = screen.getByLabelText("Password")
     expect(email).toBeInTheDocument()
     expect(password).toBeInTheDocument()
   })
