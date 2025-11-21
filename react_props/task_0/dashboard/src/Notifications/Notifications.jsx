@@ -1,6 +1,6 @@
 import closeIcon from "../assets/close-button.png";
 import './Notifications.css';
-import { getLatestNotification } from './utils';
+import { getLatestNotification } from "../utils/utils.js"
 
 function Notifications() {
   const handleClick = () => {
