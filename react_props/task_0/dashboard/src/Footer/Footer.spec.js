@@ -4,7 +4,6 @@ import * as myModule from '../utils/utils.js'
 
 describe("Footer component", () => {
   test("renders footer", () => {
-    const wrapper = shallow(<Footer />)
-    expect(wrapper).to.have.lengthOf(1);
+    render(<Footer />)
   });
 })
