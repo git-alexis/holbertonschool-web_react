@@ -8,12 +8,12 @@ describe('Notifications component', () => {
   });
 
   test('renders the notifications title', () => {
-    const wrapper = shallow(<App />)
+    const wrapper = shallow(<Notifications />)
     expect(wrapper.contains(<p>Here is the list of notifications</p>)).toBe(true);
   });
 
   it('renders 3 list items', () => {
-    const wrapper = shallow(<App />)
+    const wrapper = shallow(<Notifications />)
     expect(wrapper.find('li')).to.have.lengthOf(3);
   });
 });
