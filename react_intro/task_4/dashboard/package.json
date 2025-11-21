@@ -2,7 +2,7 @@
   "name": "dashboard",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://git-alexis.github.io/holbertonschool-web_react/",
+  "homepage": "https://git-alexis.github.io/holbertonschool-web_react/react_intro/task_4/dashboard/",
   "type": "module",
   "scripts": {
     "dev": "vite",
