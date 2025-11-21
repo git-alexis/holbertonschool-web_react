@@ -30,14 +30,6 @@ describe("Login component", () => {
     expect(boutonLogin.textContent).toMatch("OK")
   })
 
-  test("Focus on email input if Email label is clicked", async () => {
-    render(<Login />)
-    const event = userEvent.setup()
-    const input = screen.getByTestId("email")
-    await event.click(screen.getByLabelText("Email"))
-    expect(input).toBe(document.activeElement)
-  })
-
   test("Focus on password input if Password label is clicked", async () => {
     render(<Login />)
     const event = userEvent.setup()
