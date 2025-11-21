@@ -17,8 +17,8 @@ describe("Login component", () => {
 
   test("renders the labels", () => {
     render(<Login />)
-    const email = screen.getByText(/Email/i)
-    const password = screen.getByText(/Password/i)
+    const email = screen.getByText("Email")
+    const password = screen.getByText("Password")
     expect(email).toBeInTheDocument()
     expect(password).toBeInTheDocument()
   })
@@ -27,14 +27,14 @@ describe("Login component", () => {
     render(<Login />)
     const boutonLogin = screen.getByTestId("boutonLogin")
     expect(boutonLogin).toBeInTheDocument()
-    expect(boutonLogin.textContent).toMatch(/OK/i)
+    expect(boutonLogin.textContent).toMatch("OK")
   })
 
   test("Focus on email input if Email label is clicked", async () => {
     render(<Login />)
     const event = userEvent.setup()
     const input = screen.getByTestId("email")
-    await event.click(screen.getByLabelText(/Email/i))
+    await event.click(screen.getByLabelText("Email"))
     expect(input).toBe(document.activeElement)
   })
 
@@ -42,7 +42,7 @@ describe("Login component", () => {
     render(<Login />)
     const event = userEvent.setup()
     const input = screen.getByTestId("password")
-    await event.click(screen.getByLabelText(/Password/i))
+    await event.click(screen.getByLabelText("Password"))
     expect(input).toBe(document.activeElement)
   })
 })
