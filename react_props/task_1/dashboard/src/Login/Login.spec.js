@@ -3,10 +3,6 @@ import Login from './Login.jsx'
 import userEvent from '@testing-library/user-event'
 
 describe("Login component", () => {
-  it("renders login", () => {
-    render(<Login />)
-  });
-
   it("renders the input elements", () => {
     render(<Login />)
     const email = screen.getByTestId("email")
