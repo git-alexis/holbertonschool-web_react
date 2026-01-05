@@ -39,4 +39,3 @@ function Notifications() {
 }
 
 export default Notifications;
-import './App.css';
