@@ -1,3 +1,5 @@
+jest.mock('./assets/close-button.png', () => 'close-button.png');
+jest.mock('./Notifications.css', () => ({}));
 import closeIcon from './assets/close-button.png';
 import { getLatestNotification } from './utils';
 import './Notifications.css';

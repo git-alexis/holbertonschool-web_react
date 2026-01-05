@@ -1,7 +1,9 @@
+jest.mock('./assets/holberton-logo.jpg', () => 'holberton-logo.jpg');
+jest.mock('./App.css', () => ({}));
 import Notifications from './Notifications.jsx';
+import holbertonLogo from './assets/holberton-logo.jpg';
 import { getCurrentYear, getFooterCopy } from './utils.js';
 import './App.css';
-import holbertonLogo from './assets/holberton-logo.jpg';
 
 function App() {
   return (
