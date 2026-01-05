@@ -1,3 +1,7 @@
+jest.mock('./assets/holberton-logo.jpg', () => 'holberton-logo.jpg');
+jest.mock('./assets/close-button.png', () => 'close-button.png');
+jest.mock('./App.css', () => ({}));
+jest.mock('./Notifications.css', () => ({}));
 import { shallow } from 'enzyme';
 import App from './App';
 

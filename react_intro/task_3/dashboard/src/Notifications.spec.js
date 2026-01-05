@@ -1,3 +1,5 @@
+jest.mock('./assets/close-button.png', () => 'close-button.png');
+jest.mock('./Notifications.css', () => ({}));
 import { shallow } from 'enzyme';
 import Notifications from './Notifications';
 
