@@ -26,3 +26,6 @@ test.spec.js
 faultyJSX-component.jsx
 testRunner.js
 testtRunner.js
+
+package-lock.json
+.gitignore
