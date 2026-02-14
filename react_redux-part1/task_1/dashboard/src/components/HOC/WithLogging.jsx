@@ -7,7 +7,7 @@ const WithLogging = (WrappedComponent) => {
         ? WrappedComponent.name
         : 'Component';
 
-      console.log(`Component ${componentName} is mounted`);
+      //console.log(`Component ${componentName} is mounted`);
     }
 
     componentWillUnmount() {
@@ -15,7 +15,7 @@ const WithLogging = (WrappedComponent) => {
         ? WrappedComponent.name
         : 'Component';
 
-      console.log(`Component ${componentName} is going to unmount`);
+      //console.log(`Component ${componentName} is going to unmount`);
     }
 
     render() {
