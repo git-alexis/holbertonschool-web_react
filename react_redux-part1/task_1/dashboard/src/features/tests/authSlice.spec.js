@@ -19,20 +19,14 @@ describe("authSlice", () => {
   });
 
   test("should handle login", () => {
-    const previousState = {
-      user: {
-        email: "",
-        password: "",
-      },
-      isLoggedIn: false,
-    };
-
     const payload = {
       email: "TEST@email.com",
       password: "TEST",
     };
 
-    const newState = authReducer(previousState, login(payload));
+    mockAxios.post("/login", payload);
+
+    const newState = authReducer(undefined, login(payload));
 
     expect(newState.user.email).toBe(payload.email);
     expect(newState.user.password).toBe(payload.password);
@@ -40,7 +34,9 @@ describe("authSlice", () => {
   });
 
   test("should handle logout", () => {
-    const previousState = {
+    mockAxios.post("/logout");
+
+    const loggedInState = {
       user: {
         email: "TEST@email.com",
         password: "TEST",
@@ -48,7 +44,7 @@ describe("authSlice", () => {
       isLoggedIn: true,
     };
 
-    const newState = authReducer(previousState, logout());
+    const newState = authReducer(loggedInState, logout());
 
     expect(newState.user.email).toBe("");
     expect(newState.user.password).toBe("");
