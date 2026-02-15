@@ -1,9 +1,9 @@
 import authReducer, { login, logout } from "../auth/authSlice";
 
 describe("authSlice", () => {
-  test("should return the initial state", () => {
-    const initialState = authReducer(undefined, { type: undefined });
+  const initialState = authReducer(undefined, { type: undefined });
 
+  test("should return the initial state", () => {
     expect(initialState).toEqual({
       user: {
         email: "",
@@ -14,15 +14,15 @@ describe("authSlice", () => {
   });
 
   test("should handle login", () => {
-    const payload = {
+    const action = login({
       email: "alexis.billemont@holbertonschool.com",
       password: "alexisbillemont",
-    };
+    });
 
-    const newState = authReducer(undefined, login(payload));
+    const newState = authReducer(undefined, action);
 
-    expect(newState.user.email).toBe(payload.email);
-    expect(newState.user.password).toBe(payload.password);
+    expect(newState.user.email).toBe("alexis.billemont@holbertonschool.com");
+    expect(newState.user.password).toBe("alexisbillemont");
     expect(newState.isLoggedIn).toBe(true);
   });
 
