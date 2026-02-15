@@ -5,10 +5,9 @@ describe("authSlice", () => {
   //afterEach(() => {
   //  mockAxios.reset();
   //});
+  const initialState = authReducer(undefined, { type: undefined });
 
   test("should return the initial state", () => {
-    const initialState = authReducer(undefined, { type: undefined });
-
     expect(initialState).toEqual({
       user: {
         email: "",
@@ -28,8 +27,8 @@ describe("authSlice", () => {
 
     const expectedState = {
       user: {
-        email: 'john.doe@holbertonschool.com',
-        password: 'password123',
+        email: "alexis.billemont@holbertonschool.com",
+        password: "alexisbillemont",
       },
       isLoggedIn: true,
     };
