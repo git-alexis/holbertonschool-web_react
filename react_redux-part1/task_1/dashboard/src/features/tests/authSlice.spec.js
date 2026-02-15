@@ -1,10 +1,10 @@
-import mockAxios from "jest-mock-axios";
+//import mockAxios from "jest-mock-axios";
 import authReducer, { login, logout } from "../auth/authSlice";
 
 describe("authSlice", () => {
-  afterEach(() => {
-    mockAxios.reset();
-  });
+  //afterEach(() => {
+  //  mockAxios.reset();
+  //});
 
   test("should return the initial state", () => {
     const initialState = authReducer(undefined, { type: undefined });
@@ -19,22 +19,26 @@ describe("authSlice", () => {
   });
 
   test("should handle login", () => {
-    const payload = {
+    const action = login({
       email: "alexis.billemont@holbertonschool.com",
       password: "alexisbillemont",
+    });
+
+    //mockAxios.post("/login", payload);
+
+    const expectedState = {
+      user: {
+        email: 'john.doe@holbertonschool.com',
+        password: 'password123',
+      },
+      isLoggedIn: true,
     };
 
-    mockAxios.post("/login", payload);
-
-    const newState = authReducer(undefined, login(payload));
-
-    expect(newState.user.email).toBe(payload.email);
-    expect(newState.user.password).toBe(payload.password);
-    expect(newState.isLoggedIn).toBe(true);
+    expect(authReducer(initialState, action)).toEqual(expectedState);
   });
 
   test("should handle logout", () => {
-    mockAxios.post("/logout");
+    //mockAxios.post("/logout");
 
     const loggedInState = {
       user: {
