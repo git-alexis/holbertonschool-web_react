@@ -20,8 +20,8 @@ describe("authSlice", () => {
 
   test("should handle login", () => {
     const payload = {
-      email: "TEST@email.com",
-      password: "TEST",
+      email: "alexis.billemont@holbertonschool.com",
+      password: "alexisbillemont",
     };
 
     mockAxios.post("/login", payload);
@@ -38,8 +38,8 @@ describe("authSlice", () => {
 
     const loggedInState = {
       user: {
-        email: "TEST@email.com",
-        password: "TEST",
+        email: "alexis.billemont@holbertonschool.com",
+        password: "alexisbillemont",
       },
       isLoggedIn: true,
     };
