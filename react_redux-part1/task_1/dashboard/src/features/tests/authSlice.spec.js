@@ -1,4 +1,4 @@
-//import mockAxios from "jest-mock-axios";
+import mockAxios from "jest-mock-axios";
 import authReducer, { login, logout } from "../auth/authSlice";
 
 describe("authSlice", () => {
