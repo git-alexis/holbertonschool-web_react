@@ -19,7 +19,7 @@ describe("authSlice", () => {
       password: "alexisbillemont",
     });
 
-    const newState = authReducer(undefined, action);
+    const newState = authReducer(initialState, action);
 
     expect(newState.user.email).toBe("alexis.billemont@holbertonschool.com");
     expect(newState.user.password).toBe("alexisbillemont");
