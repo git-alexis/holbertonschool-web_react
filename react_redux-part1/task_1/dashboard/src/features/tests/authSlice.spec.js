@@ -2,9 +2,9 @@
 import authReducer, { login, logout } from "../auth/authSlice";
 
 describe("authSlice", () => {
-  //afterEach(() => {
-  //  mockAxios.reset();
-  //});
+  afterEach(() => {
+    mockAxios.reset();
+  });
   const initialState = authReducer(undefined, { type: undefined });
 
   test("should return the initial state", () => {
@@ -23,7 +23,7 @@ describe("authSlice", () => {
       password: "alexisbillemont",
     });
 
-    //mockAxios.post("/login", payload);
+    mockAxios.post("/login", payload);
 
     const expectedState = {
       user: {
@@ -37,7 +37,7 @@ describe("authSlice", () => {
   });
 
   test("should handle logout", () => {
-    //mockAxios.post("/logout");
+    mockAxios.post("/logout");
 
     const loggedInState = {
       user: {
