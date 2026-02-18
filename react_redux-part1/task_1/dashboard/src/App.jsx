@@ -99,7 +99,7 @@ export default function App() {
       type: APP_ACTIONS.MARK_NOTIFICATION_READ,
       payload: id
     });
-    console.log(`Notification ${id} has been marked as read`);
+    //console.log(`Notification ${id} has been marked as read`);
   }, []);
 
   return (
