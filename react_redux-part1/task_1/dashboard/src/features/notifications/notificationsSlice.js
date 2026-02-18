@@ -7,8 +7,8 @@ const initialState = {
   displayDrawer: true,
 };
 
-export const API_BASE_URL = "http://localhost:5173";
-export const ENDPOINTS = {
+const API_BASE_URL = "http://localhost:5173";
+const ENDPOINTS = {
   notifications: `${API_BASE_URL}/notifications.json`,
 };
 
