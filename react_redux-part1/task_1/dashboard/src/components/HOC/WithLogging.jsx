@@ -2,21 +2,21 @@ import { Component } from 'react';
 
 const WithLogging = (WrappedComponent) => {
   class WithLoggingComponent extends Component {
-    componentDidMount() {
+    /*componentDidMount() {
       const componentName = WrappedComponent.name
         ? WrappedComponent.name
         : 'Component';
 
-      //console.log(`Component ${componentName} is mounted`);
-    }
+      console.log(`Component ${componentName} is mounted`);
+    }*/
 
-    componentWillUnmount() {
+    /*componentWillUnmount() {
       const componentName = WrappedComponent.name
         ? WrappedComponent.name
         : 'Component';
 
-      //console.log(`Component ${componentName} is going to unmount`);
-    }
+      console.log(`Component ${componentName} is going to unmount`);
+    }*/
 
     render() {
       return <WrappedComponent {...this.props} />;

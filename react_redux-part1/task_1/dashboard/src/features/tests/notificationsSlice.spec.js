@@ -26,7 +26,7 @@ describe("notificationsSlice", () => {
       { id: 3, value: "BILLEMONT", type: "urgent" },
     ];
 
-    mockAxios.get.mockResolvedValueOnce({data: fakeData});
+    mockAxios.get.mockResolvedValueOnce({ data: fakeData });
 
     const dispatch = jest.fn();
     const thunk = fetchNotifications();

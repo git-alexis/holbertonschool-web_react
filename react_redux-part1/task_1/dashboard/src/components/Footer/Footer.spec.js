@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import Footer from './Footer';
-import { getCurrentYear, getFooterCopy } from '../../utils/utils';
 
 test('It should render footer with copyright text', () => {
   const defaultUser = {
@@ -32,8 +31,8 @@ test('Contact us link is not displayed when user is logged out', () => {
 
 test('Contact us link is displayed when user is logged in', () => {
   const loggedInUser = {
-    email: 'test@test.com',
-    password: 'password123',
+    email: 'alexis.billemont@holbertonschool.com',
+    password: 'alexisbillemont',
     isLoggedIn: true
   };
 
