@@ -31,7 +31,7 @@ describe("notificationsSlice", () => {
     const dispatch = jest.fn();
     const thunk = fetchNotifications();
 
-    await thunk(dispatch, () => ({}), undefined);
+    await thunk(dispatch, () => ({}));
 
     expect(dispatch).toHaveBeenCalled();
   });
