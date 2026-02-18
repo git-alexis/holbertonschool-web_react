@@ -39,8 +39,8 @@ describe("notificationsSlice", () => {
   test("should remove notification when marked as read", () => {
     const initialState = {
       notifications: [
-        { id: 1, value: "Holberton" },
-        { id: 2, value: "Alexis BILLEMONT" },
+        { id: 1, value: "Holberton", type: "default" },
+        { id: 2, value: "Alexis BILLEMONT", type: "urgent" },
       ],
       displayDrawer: true,
     };

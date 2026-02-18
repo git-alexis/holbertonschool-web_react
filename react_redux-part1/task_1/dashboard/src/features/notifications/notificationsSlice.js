@@ -17,19 +17,31 @@ export const fetchNotifications = createAsyncThunk(
   async () => {
     const response = await axios.get(ENDPOINTS.notifications);
 
-    const notifications = response.data;
+    const data = response.data;
 
-    const updatedNotifications = notifications.map((notification) => {
-      if (notification.id === 3) {
+    const notifications = [...data];
+
+    const latestContent = getLatestNotification();
+
+    const updatedList = notifications.map((notif) => {
+      if (notif.id === 3) {
         return {
-          ...notification,
-          value: getLatestNotification(),
+          ...notif,
+          html: { __html: latestContent },
         };
       }
-      return notification;
+      return notif;
     });
 
-    return updatedNotifications;
+    if (!updatedList.some((notif) => notif.id === 3)) {
+      updatedList.push({
+        id: 3,
+        type: "urgent",
+        html: { __html: latestContent },
+      });
+    }
+
+    return updatedList;
   }
 );
 
@@ -40,7 +52,7 @@ const notificationsSlice = createSlice({
     markNotificationAsRead: (state, action) => {
       const id = action.payload;
 
-      console.log(`Notification ${id} has been marked as read`);
+      console.log(id);
 
       state.notifications = state.notifications.filter(
         (notification) => notification.id !== id
