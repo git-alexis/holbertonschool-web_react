@@ -2,6 +2,11 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { getLatestNotification } from "../../utils/utils";
 
+const initialState = {
+  notifications: [],
+  displayDrawer: true,
+};
+
 export const API_BASE_URL = "http://localhost:5173";
 export const ENDPOINTS = {
   notifications: `${API_BASE_URL}/notifications.json`,
@@ -28,11 +33,6 @@ export const fetchNotifications = createAsyncThunk(
   }
 );
 
-const initialState = {
-  notifications: [],
-  displayDrawer: true,
-};
-
 const notificationsSlice = createSlice({
   name: "notifications",
   initialState,
@@ -40,7 +40,7 @@ const notificationsSlice = createSlice({
     markNotificationAsRead: (state, action) => {
       const id = action.payload;
 
-      console.log(id);
+      console.log(`Notification ${id} has been marked as read`);
 
       state.notifications = state.notifications.filter(
         (notification) => notification.id !== id
