@@ -14,12 +14,12 @@ describe("authSlice", () => {
   });
 
   test("should handle login", () => {
-    const action = login({
+    const payload = {
       email: "alexis.billemont@holbertonschool.com",
       password: "alexisbillemont",
-    });
+    };
 
-    const newState = authReducer(initialState, action);
+    const newState = authReducer(initialState, login(payload));
 
     expect(newState.user.email).toBe("alexis.billemont@holbertonschool.com");
     expect(newState.user.password).toBe("alexisbillemont");
