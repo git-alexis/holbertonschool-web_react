@@ -19,7 +19,7 @@ const student2: Student = {
     location: "Los Angeles",
 };
 
-const studentsList: Array<Student> = [student1, student2];
+const studentsList: Student[] = [student1, student2];
 
 const labels: string[] = ['firstName', 'location'];
 
