@@ -9,7 +9,7 @@ describe('App component', () => {
   test('renders the h1 with text "School dashboard"', () => {
     const heading = screen.getByRole('heading', {
       level: 1,
-      name: /school dashboard/i,
+      name: /School dashboard/i,
     });
 
     expect(heading).toBeInTheDocument();
@@ -17,7 +17,7 @@ describe('App component', () => {
 
   test('renders the correct text in app-body and app-footer', () => {
     const bodyText = screen.getByText(
-      /login to access the full dashboard/i,
+      /Login to access the full dashboard/i,
     );
 
     const footerText = screen.getByText(
