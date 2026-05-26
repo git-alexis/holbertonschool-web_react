@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App from './App.jsx';
+import App from './App';
 
 describe('App component', () => {
   beforeEach(() => {
@@ -7,13 +7,25 @@ describe('App component', () => {
   });
 
   test('renders the h1 with text "School dashboard"', () => {
-    const heading = screen.getByRole('heading', { level: 1, name: /school dashboard/i });
+    const heading = screen.getByRole('heading', {
+      level: 1,
+      name: /school dashboard/i,
+    });
+
     expect(heading).toBeInTheDocument();
   });
 
   test('renders the correct text in app-body and app-footer', () => {
-    const bodyText = screen.getByText(/login to access the full dashboard/i);
-    const footerText = screen.getByText(new RegExp(`Copyright ${new Date().getFullYear()} - holberton School`, 'i'));
+    const bodyText = screen.getByText(
+      /login to access the full dashboard/i,
+    );
+
+    const footerText = screen.getByText(
+      new RegExp(
+        `Copyright ${new Date().getFullYear()} - holberton School`,
+        'i',
+      ),
+    );
 
     expect(bodyText).toBeInTheDocument();
     expect(footerText).toBeInTheDocument();
@@ -21,6 +33,7 @@ describe('App component', () => {
 
   test('renders an image with alt text "holberton logo"', () => {
     const logo = screen.getByAltText(/holberton logo/i);
+
     expect(logo).toBeInTheDocument();
   });
 });
