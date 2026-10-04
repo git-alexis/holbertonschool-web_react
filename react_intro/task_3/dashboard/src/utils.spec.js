@@ -1,7 +1,6 @@
 import { getCurrentYear, getFooterCopy, getLatestNotification } from './utils';
 
 describe("Utils functions", () => {
-
   test("getCurrentYear returns the correct year", () => {
     expect(getCurrentYear()).toEqual(new Date().getFullYear());
   });
@@ -17,5 +16,4 @@ describe("Utils functions", () => {
   test("getLatestNotification returns the expected string", () => {
     expect(getLatestNotification()).toEqual("<strong>Urgent requirement</strong> - complete by EOD");
   });
-
 });
