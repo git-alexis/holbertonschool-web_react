@@ -20,6 +20,8 @@ describe('Notifications component', () => {
     render(<Notifications />);
     const listItems = screen.getAllByRole('listitem');
     expect(listItems.length).toBe(3);
+    expect(screen.getByText(/new course available/i)).toBeInTheDocument();
+    expect(screen.getByText(/new resume available/i)).toBeInTheDocument();
   });
 
   test("logs a message when the close button is clicked", () => {
