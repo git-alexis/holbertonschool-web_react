@@ -11,7 +11,9 @@ describe('Notifications component', () => {
   test("renders the close button", () => {
     render(<Notifications />);
     const button = screen.getByRole('button');
+    const closeIcon = screen.getByAltText(/close icon/i);
     expect(button).toBeInTheDocument();
+    expect(closeIcon).toBeInTheDocument();
   });
 
   test("renders 3 list items", () => {
