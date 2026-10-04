@@ -6,15 +6,15 @@ describe("Header component", () => {
     render(<Header />)
   });
 
-  test("renders the title", () => {
-      render(<Header />)
-      const title = screen.getByRole("heading")
-      expect(title).toBeInTheDocument()
-  })
-
   test("renders the image", () => {
     render(<Header />)
-    const image = screen.getByAltText("holberton logo")
-    expect(image).toBeInTheDocument()
+    const logo = screen.getByAltText(/holberton logo/i);
+    expect(logo).toBeInTheDocument();
+  })
+
+  test("renders the title", () => {
+    render(<Header />)
+    const heading = screen.getByRole('heading', {level: 1, name: /school dashboard/i});
+    expect(heading).toBeInTheDocument();
   })
 })

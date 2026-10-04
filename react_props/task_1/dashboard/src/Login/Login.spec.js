@@ -1,36 +1,30 @@
-import {render, screen} from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react';
 import Login from './Login.jsx'
-import userEvent from '@testing-library/user-event'
 
 describe("Login component", () => {
-  it("renders the input elements", () => {
+  test("renders login", () => {
     render(<Login />)
-    const email = screen.getByTestId("email")
-    const password = screen.getByTestId("password")
-    expect(email).toBeInTheDocument()
-    expect(password).toBeInTheDocument()
-  })
+  });
 
-  it("renders the labels", () => {
-    render(<Login />)
-    const email = screen.getByLabelText("Email")
-    const password = screen.getByLabelText("Password")
-    expect(email).toBeInTheDocument()
-    expect(password).toBeInTheDocument()
-  })
+  test('renders 2 labels, 2 inputs, and 1 button', () => {
+    const { container } = render(<Login />);
+    const labels = container.querySelectorAll('label');
+    const inputs = container.querySelectorAll('input');
+    const button = screen.getByRole('button');
+    expect(labels.length).toBe(2);
+    expect(inputs.length).toBe(2);
+    expect(button).toBeInTheDocument();
+  });
 
-  it("renders the button", () => {
-    render(<Login />)
-    const boutonLogin = screen.getByTestId("boutonLogin")
-    expect(boutonLogin).toBeInTheDocument()
-    expect(boutonLogin.textContent).toMatch("OK")
-  })
-
-  it("Focus on password input if Password label is clicked", async () => {
-    render(<Login />)
-    const event = userEvent.setup()
-    const input = screen.getByTestId("password")
-    await event.click(screen.getByLabelText("Password"))
-    expect(input).toBe(document.activeElement)
-  })
+  test('focuses the related input when a label is clicked', () => {
+    render(<Login />);
+    const emailLabel = screen.getByText(/email/i);
+    const passwordLabel = screen.getByText(/password/i);
+    const emailInput = screen.getByLabelText(/email/i);
+    const passwordInput = screen.getByLabelText(/password/i);
+    fireEvent.click(emailLabel);
+    expect(emailInput).toHaveFocus();
+    fireEvent.click(passwordLabel);
+    expect(passwordInput).toHaveFocus();
+  });
 })
