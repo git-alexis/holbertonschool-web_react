@@ -1,9 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Notifications from './Notifications';
 
-jest.mock('./assets/close-button.png', () => 'close-button.png');
-jest.mock('./Notifications.css', () => ({}));
-
 describe('Notifications component', () => {
   test("<Notifications /> is rendered without crashing", () => {
     render(<Notifications />);
