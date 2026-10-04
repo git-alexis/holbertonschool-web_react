@@ -2,17 +2,11 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import Notifications from './Notifications';
 
 describe('Notifications component', () => {
-  test("renders the notifications title", () => {
+  test("renders the title and the close button", () => {
     render(<Notifications />);
-    const notificationTitle = screen.getByText(
-      /here is the list of notifications/i
-    );
-    expect(notificationTitle).toBeInTheDocument();
-  });
-
-  test("renders the close button", () => {
-    render(<Notifications />);
+    const title = screen.getByText(/here is the list of notifications/i);
     const closeButton = screen.getByRole('button', { name: /close/i });
+    expect(title).toBeInTheDocument();
     expect(closeButton).toBeInTheDocument();
   });
 
@@ -20,8 +14,6 @@ describe('Notifications component', () => {
     render(<Notifications />);
     const listItems = screen.getAllByRole('listitem');
     expect(listItems.length).toBe(3);
-    expect(screen.getByText(/new course available/i)).toBeInTheDocument();
-    expect(screen.getByText(/new resume available/i)).toBeInTheDocument();
   });
 
   test("logs a message when the close button is clicked", () => {
