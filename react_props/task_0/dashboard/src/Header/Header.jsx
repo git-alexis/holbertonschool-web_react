@@ -1,12 +1,12 @@
-import logo from "../assets/holberton-logo.jpg";
+import holbertonLogo from '../assets/holberton-logo.jpg';
 import "./Header.css";
 
 function Header() {
   return (
     <>
       <div className="App-header">
-        <img src={logo} alt="holberton logo"></img>
-        <h1 role="heading">School dashboard</h1>
+        <img src={holbertonLogo} alt="holberton logo" className="App-logo" />
+        <h1>School dashboard</h1>
       </div>
     </>
   );

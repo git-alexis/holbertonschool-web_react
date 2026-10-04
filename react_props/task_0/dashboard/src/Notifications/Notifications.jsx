@@ -1,6 +1,6 @@
-import closeIcon from "../assets/close-button.png";
 import './Notifications.css';
-import { getLatestNotification } from "../utils/utils.js"
+import closeIcon from '../assets/close-button.png';
+import { getLatestNotification } from '../utils/utils.js';
 
 function Notifications() {
   const handleClick = () => {
@@ -9,9 +9,7 @@ function Notifications() {
 
   return (
     <div className="notification-items">
-      <p>Here is the list of notifications</p>
-
-      <button data-testid="boutonNotification"
+      <button
         style={{
           top: 30,
           right: 14,
@@ -25,6 +23,8 @@ function Notifications() {
       >
         <img src={closeIcon} alt="close icon" style={{ width: "1rem", height: "1rem" }} />
       </button>
+
+      <p>Here is the list of notifications</p>
 
       <ul>
         <li data-priority="default">New course available</li>
